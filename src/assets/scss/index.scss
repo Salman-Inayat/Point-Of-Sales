@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f4f6f8;
+  height: 100%;
+  font-size: 1.4rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  height: 100%;
+}

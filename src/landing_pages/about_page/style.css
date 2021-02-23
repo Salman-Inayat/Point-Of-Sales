@@ -1,0 +1,74 @@
+.about-story{
+    margin: 150px 10%;
+
+}
+
+.about-story h2{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.about-story p{
+    line-height: 30px;
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.story-icon{
+    font-size: 9rem;
+    text-align: center;
+    color: #cc19ff;
+
+}
+
+.icon-container{
+    text-align: center;
+}
+
+.icon-container h2{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.team-header{
+    margin: 50px 0px;
+}
+
+.team-carousel{
+    background-color: #fff;
+    border: none;
+    height: 70vh;
+}
+
+.team-content{
+    color: black;
+    text-align: center;
+    padding: 40px;
+}
+
+.team-content img{
+    border-radius: 50%;
+    width: 40%;
+    height: auto;
+}
+
+.team-content h2{
+    margin:20px 0px;
+}
+ .story-carousel{
+     width: 50%;
+     margin: 60px auto;
+ }
+
+
+ @media (max-width: 768px) {
+     .story-carousel{
+         width: 100%;
+     }
+
+     .team-carousel{
+        height: 45vh;
+    }
+ }

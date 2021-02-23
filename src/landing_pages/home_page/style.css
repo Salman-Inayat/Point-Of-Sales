@@ -1,0 +1,201 @@
+.carousel-image{
+    width: 100%;
+    height: 100vh;
+}
+
+.carousel{
+    position: relative;
+}
+
+.carousel-content{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    color: white;
+    width: 35%;
+    text-align: left;
+}
+
+.carousel-content h1, p{
+    margin: 15px 0px;
+}
+
+.carousel-content h1{
+    font-size: 3.5rem;
+}
+
+.carousel-content p{
+    font-size: 2rem;
+}
+
+.landing-carousel-button{
+    margin:30px;
+    border-radius: 35px;
+    border: 2px solid #cc19ff;
+    background-color: transparent;
+    text-align:center;
+    height: 50px;
+    font-size: 1.6rem;
+}
+
+
+
+.push-section{
+    margin: 70px 8%;
+}
+
+.push-section h1{
+    font-weight: 500;
+}
+
+.push-cards{
+    text-align: center;
+}
+
+.push-cards h3{
+    margin: 15px auto;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.push-cards p{
+    margin: 5px auto;
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.retail-section{
+    margin: 70px 8%;
+}
+
+.retail-section h2{
+    font-size: 3.5rem;
+    width: 60%;
+    font-weight: 500;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.push-section h1{
+    font-size: 3.5rem;
+    width: 60%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.push-image{
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.retail-cards{
+    height: 250px;
+}
+
+.retail-cards img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.retail-cards h3{
+    margin: 10px;
+    text-align: center;
+}
+
+.testimonial-section{
+    margin: 70px 5%;
+}
+
+.testimonial-carousel{
+    height: 85vh;
+    width: 100%;
+    background-color: white;
+}
+
+.content-parent{
+    display: flex
+}
+
+.testimonial-carousel-content{
+    color: black;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+}
+
+.testimonial-image{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.testimonial-content{
+    padding: 60px;
+    text-align: left;
+    margin: auto;
+}
+
+.testimonial-content h1,p,h3{
+    margin-bottom: 25px;
+}
+
+.testimonial-content h1{
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.testimonial-content p{
+    line-height: 30px;
+    font-size: 1.9rem;
+    font-weight: 300;
+}
+
+
+@media (max-width: 768px) {
+
+    .landing-carousel{
+        height: 50vh;
+    }
+
+    .carousel-image{
+        width: 100%;
+        height: 50vh;
+    }
+
+    .carousel-content{
+        position: absolute;
+        top: 35%;
+        left: 5%;
+        color: white;
+        width: 55%;
+        text-align: left;
+    }
+
+
+    .carousel-content h1, p{
+        margin: 15px 0px;
+    }
+
+    .carousel-content h1{
+        font-size: 2rem;
+    }
+
+    .carousel-content p{
+        font-size: 1.5rem;
+    }
+
+    .landing-carousel-button{
+        margin:15px 0px;
+        border-radius: 35px;
+        border: 2px solid #cc19ff;
+        background-color: transparent;
+        text-align:center;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}

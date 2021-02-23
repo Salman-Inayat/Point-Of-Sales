@@ -1,0 +1,521 @@
+input{
+    border-radius: 5px;
+    height: 25px;
+    border: 1px solid #cc19ff;
+    margin: 10px 0px;
+    padding: 1px 5px;
+}
+
+input:focus{
+    outline: none;
+}
+
+input[type=number]{
+    width: 65px;
+}
+
+input[type=text]{
+    width: 100px;
+}
+
+th{
+    padding: 5px 15px;
+}
+
+td{
+    text-align: center;
+}
+
+button{
+    border-radius: 50px;
+    border: none;
+    background-color: #cc19ff;
+    color: white;
+    padding: 8px 10px;
+    letter-spacing: 0.5px;
+}
+
+button:focus{
+    outline: none;
+}
+
+.reports-section {
+    padding: 40px;
+}
+
+.items-section{
+    padding: 20px;
+}
+
+/* #create-small-margin{
+    margin: 1em;
+} */
+
+.card-search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.create-item-button{
+    padding: 0px 15px;
+    height: 30px;
+    margin: auto 20px;
+}
+
+.adjustment-section{
+    display: flex;
+    height: 80vh;
+    padding: 60px;
+}
+
+.order-section, .seeAllOrders-section{
+    padding: 40px;
+}
+
+.adjustment-image{
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.order-image{
+    height: 300px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image-of-cards {
+    width:  100%;
+    height: 300px;
+    border-radius: 10px;
+    clip-path: polygon(0% 0%, 75% 0%, 98% 50%, 75% 100%, 0% 100%);
+
+}
+
+.content{
+    width: 33%;
+    margin-right: 0px;
+}
+
+.item-cards{
+    display: block;
+    width: 95%;
+}
+
+.icon-image{
+    width: 17px;
+    height: 17px;
+    margin: -4px 3px;
+}
+
+
+
+.card-image ul li{
+    list-style: none;
+} 
+
+.card-image{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+
+.image-grid{
+    background-color: #cc19ff;
+    border: 10px 0px 0px 10px;
+    clip-path: polygon(0% 0%, 75% 0, 99% 50%, 75% 100%, 0% 100%);
+    border-radius: 10px 0px 0px 10px;
+}
+
+.card-grid{
+    background-color: #d0cece;
+
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.image{
+    background-color: #d0cece;
+    border-radius: 5px;
+    box-shadow: 3px 4px 10px gray;
+}
+
+.image ul{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.image ul li{
+    list-style: none;
+	background-image: url("/arrow.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+    background-size: 10px;
+    padding: 2px 0px 4px 20px;
+    
+}
+
+
+.card-button{
+    text-align: center;
+    padding: 10px;
+    margin: 5px 33%;
+}
+
+.card-button a{
+    color: white;
+}
+
+.search{
+    margin-right: 20px;
+}
+
+.visible-content{
+    margin: 5px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.hidden-content{
+    display: flex;
+    width: 35%;
+    margin: 0px auto;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hidden-content span{
+    /* margin:  10px; */
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.flip-section{
+    background-color: #cc19ff;
+    border-radius: 0px 0px 5px 5px;
+    margin-top: -4px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+.flip-section:focus{
+outline: none;
+}
+
+.file-upload-button{
+    height: 25px;
+    margin: auto 25px;
+}
+
+input[type='radio']:after {
+    width: 13px;
+    height: 13px;
+    border-radius: 15px;
+    top: 1px;
+    left: 0px;
+    position: relative;
+    background-color: #d0cece;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #830d92;
+    margin-right: 10px;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: 0px;
+    left: 0px;
+    position: relative;
+    background-color: #830d92;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.order-card{
+    display: flex;
+    background-color: #dedbd9;
+    padding-inline-start: 40px;
+    border-radius: 10px;
+    margin: 30px auto;
+    width: 70%; 
+    height: 50vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.order-card-left{
+    width: 50%;
+    padding: 29px;
+}
+
+.order-card-right{
+    width: 50%;
+    padding: 10px;
+}
+
+.input-center{
+    text-align: center;
+}
+
+.order-card-right img{
+    /* height: 100%; */
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* border-top: 10px solid  #dedbd9;
+    border-right: 10px solid  #dedbd9;
+    border-bottom: 10px solid #dedbd9;
+    border-radius: 10px; */
+}
+
+
+.input-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.left-label{
+    flex: 30%;
+    margin: 12px 0px;
+}
+
+.right-label{
+    flex: 40%;
+}
+
+.profile-section{
+    padding: 50px;
+}
+
+.quote-message{
+    border-left: 7px solid magenta;
+    padding-left: 15px;
+    width: 100%;
+    background-color: #d0cece;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.quote-message span{
+    width: 130px;
+}
+
+.quote-update-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-edit-button{
+    margin-left: auto;
+    margin-right: 50px;
+    border-radius: 6px;
+    width: 85px;
+    letter-spacing: 1px;
+}
+
+.new-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    margin:15px auto;
+}
+
+.todo-list{
+    background-color: #d0cece;
+    width: 65%;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+.todo-header{
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.todo-button{
+    float: right;
+    padding: 4px;
+    margin: 0px;
+    width: 120px;
+}
+
+.list li{
+    list-style-type: none;
+}
+
+.todo-li{
+    margin: 18px 0px;
+}
+
+.new-user-form, .new_task_form{
+    width:45%;
+    padding: 0px 40px;
+    margin: 10px auto; 
+    display:flex; 
+    flex-direction:column;
+    align-items:center;
+    background-color: #d0cece;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.new-item-form{
+    width:70%;
+    padding: 0px 40px;
+    margin: 10px auto; 
+    display:flex; 
+    flex-direction:column;
+    align-items:center;
+    background-color: #d0cece;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.create-task-section{
+    padding: 50px;
+    margin: 50px auto;
+}
+
+/* ======================= */
+
+.main {
+    background-color: #cecccc;
+    width: 400px;
+    height: 70vh;
+    margin: 7em auto;
+    border-radius: 1.3em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    text-align: center;
+    margin-bottom: 10px;
+    background: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+}
+
+form {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-image{
+    height: 70px;
+    width: 70px;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    text-align: center;
+    margin-bottom: 30px;
+    background: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+.submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    height: 38px;
+    padding: 10px 30px;
+}
+
+
+a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    text-decoration: none
+}
+
+
+.product-order-section{
+    margin: 50px 5%;
+}
+
+
+@media (max-width: 600px) {
+    .main {
+        border-radius: 0px;
+        width: 60vw;
+        height: 50vh;
+    }
+}
+
+.reports-form{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+}
