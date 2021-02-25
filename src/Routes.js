@@ -52,23 +52,24 @@ class Routes extends Component {
     this.props.handleLogin(userinfo);
   };
   componentDidMount() {
-    fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/products")
+    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json")
       .then((r) => r.json())
       .then((data) => this.getAllProducts(data));
     fetch(
-      "https://limitless-fjord-48119.herokuapp.com/api/v1/sales_transcations"
+      "https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/sales_transcations.json"
     )
       .then((r) => r.json())
       .then((data) => this.getAllSalesData(data));
-    fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/products_sales")
+    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/products_sales.json")
       .then((r) => r.json())
       .then((data) => this.getAllProductsSales(data));
-    fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/adjustments")
+    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/adjustmentjson.json")
       .then((r) => r.json())
       .then((data) => this.getAllAdjustment(data));
-    fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/orders")
-      .then((r) => r.json())
-      .then((data) => this.getAllOrder(data));
+    // fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/orders")
+    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/orderjson.json")
+    .then((r) => r.json())
+    .then((data) => this.getAllOrder(data));
     let token = localStorage.getItem("token");
     if (token) {
       fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/current_user", {

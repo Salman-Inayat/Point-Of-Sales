@@ -52,7 +52,7 @@ const CreateNewItem = (props) => {
       barcode: props.barcode,
       unit:props.unit,
     }
-    const url = "https://limitless-fjord-48119.herokuapp.com/api/v1/products"
+    const url = "https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json"
     Adapter.fetchRequest(url, submissionBody, "POST").then(() => {
       console.log("good")
       props.addProduct(submissionBody)

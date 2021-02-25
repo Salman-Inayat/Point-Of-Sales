@@ -15,7 +15,7 @@ class TestimonialCarousel extends Component {
                             <div className="testimonial-content">
                                 <h1>Hear our cutomer stories</h1>
                                 <p>I tried this app for the first time. Trust me this is way better than other POS software in the market. It is simple and powerful. Also, the customer’s assistance is amazing and super cooperative. It's really worth the money.</p>
-                                <h3>Food and drink retail, India</h3>
+                                <h3>Food and drink retail, Pakistan</h3>
                             </div>
                         </Grid>
                         <Grid item md={5} sm={5} xs={12}>

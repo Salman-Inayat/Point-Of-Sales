@@ -12,7 +12,8 @@ class Order extends Component {
 
   createOpenOrder=(event)=> {
     event.preventDefault()
-    const url="https://limitless-fjord-48119.herokuapp.com/api/v1/orders"
+    // const url="https://limitless-fjord-48119.herokuapp.com/api/v1/orders";
+    const url="https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/orderjson.json";
     const submissionBody={
       product_id:this.props.orderProduct.id,
       product_name:this.props.orderProduct.item_name,

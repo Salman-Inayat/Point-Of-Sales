@@ -46,7 +46,7 @@ if (this.props.order.id) {
   }
 
 }
-  const url="https://limitless-fjord-48119.herokuapp.com/api/v1/orders/"+this.props.order.id
+  const url="https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/orderjson.json"+this.props.order.id
   const submissionBody={
     on_order:false,
     received:true,
@@ -54,7 +54,7 @@ if (this.props.order.id) {
   }
 
   Adapter.fetchRequest(url,submissionBody,"PATCH").then(()=>{
-    const productUrl="https://limitless-fjord-48119.herokuapp.com/api/v1/products/"+this.props.order.product_id
+    const productUrl="https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json"+this.props.order.product_id
     const currentProduct=this.props.allProducts.find(product=>product.id === this.props.order.product_id)
     const productSubmissionBody={
       order:(parseFloat(currentProduct.order) + parseFloat(this.props.order.qty)).toFixed(2),

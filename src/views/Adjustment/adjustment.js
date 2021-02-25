@@ -20,7 +20,7 @@ class Adjustment extends Component {
 
   handleAdjustment = (event)=>{
     event.preventDefault()
-    const url= "https://limitless-fjord-48119.herokuapp.com/api/v1/adjustments"
+    const url= "https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/adjustmentjson.json"
     const submissionBody={
       reason_code:this.props.adjustmenntReasonCode,
       product_id:this.props.adjustmentProduct.id,
@@ -31,7 +31,7 @@ class Adjustment extends Component {
       total_dollars:this.props.adjustmentQty*this.props.adjustmentProduct.last_cost
     }
     Adapter.fetchRequest(url,submissionBody,"POST").then(()=>{
-      const productUrl="https://limitless-fjord-48119.herokuapp.com/api/v1/products/"+this.props.adjustmentProduct.id
+      const productUrl="https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json"+this.props.adjustmentProduct.id
       const productSubmissionBody={
 
         inventory:(parseFloat(this.props.adjustmentProduct.inventory)+parseFloat(this.props.adjustmentQty)).toFixed(2),

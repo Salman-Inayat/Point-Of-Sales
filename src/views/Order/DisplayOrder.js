@@ -37,14 +37,14 @@ import Adapter from "../../Adapter"
      this.props.allOrders[this.props.allOrders.indexOf(this.props.order)].received_by=this.props.currentUser.username
      this.props.allOrders[this.props.allOrders.indexOf(this.props.order)].updated_at=date
        this.props.processAllOrders(this.props.allOrders)
-       const url="https://limitless-fjord-48119.herokuapp.com/api/v1/orders/"+this.props.order.id
+       const url="https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/orderjson.json"+this.props.order.id
        const submissionBody={
          on_order:false,
          received:true,
          received_by:this.props.currentUser.username
        }
        Adapter.fetchRequest(url,submissionBody,"PATCH").then(()=>{
-         const productUrl="https://limitless-fjord-48119.herokuapp.com/api/v1/products/"+this.props.order.product_id
+         const productUrl="https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json"+this.props.order.product_id
          const currentProduct=this.props.allProducts.find(product=>product.id === this.props.order.product_id)
          const productSubmissionBody={
            order:parseFloat(currentProduct.order)+parseFloat(this.props.order.qty),
@@ -69,7 +69,7 @@ import Adapter from "../../Adapter"
 
    return(
     <div className="order-card">
-      <div className='order-card-left' id="center-order-card">
+      <div className='order-card-left' id="center-order-card" >
         <h3 style={{margin:'20px 0px', textTransform:'uppercase'}}>{this.props.order.product_name}</h3>
         <p>Quantity: {this.props.order.qty}</p>
         <p>Price: {this.props.order.price}</p>
