@@ -20,7 +20,7 @@ class Adjustment extends Component {
 
   handleAdjustment = (event)=>{
     event.preventDefault()
-    const url= "https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/adjustmentjson.json"
+    const url= "http://localhost:3000/adjustments"
     const submissionBody={
       reason_code:this.props.adjustmenntReasonCode,
       product_id:this.props.adjustmentProduct.id,
@@ -28,10 +28,12 @@ class Adjustment extends Component {
       qty_to_adjust:this.props.adjustmentQty,
       user_id:this.props.currentUser.id,
       created_by:this.props.currentUser.username,
-      total_dollars:this.props.adjustmentQty*this.props.adjustmentProduct.last_cost
+      total_dollars:this.props.adjustmentQty*this.props.adjustmentProduct.last_cost,
+      created_at: new Date(),
+      updated_at: new Date(),
     }
     Adapter.fetchRequest(url,submissionBody,"POST").then(()=>{
-      const productUrl="https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json"+this.props.adjustmentProduct.id
+      const productUrl="http://localhost:3000/items"+this.props.adjustmentProduct.id
       const productSubmissionBody={
 
         inventory:(parseFloat(this.props.adjustmentProduct.inventory)+parseFloat(this.props.adjustmentQty)).toFixed(2),

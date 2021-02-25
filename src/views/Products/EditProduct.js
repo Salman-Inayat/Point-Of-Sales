@@ -16,13 +16,13 @@ class EditProduct extends Component {
     unit: this.props.product.unit,
     status: this.props.product.status,
     forecast_sales_three_months: this.props.product.forecast_sales_three_months,
-    need_to_order_for_next_three_months: this.props.product
-      .need_to_order_for_next_three_months,
+    need_to_order_for_next_three_months: this.props.product.need_to_order_for_next_three_months,
     annualized_sales: this.props.product.annualized_sales,
     annualized_qty: this.props.product.annualized_qty,
     category: this.props.product.category,
     barcode: this.props.product.barcode,
     image_url: this.props.product.image_url,
+    updated_at: new Date(),
   };
 
   newItem_Name = (event) => {
@@ -151,7 +151,7 @@ class EditProduct extends Component {
       unit: this.state.unit,
     };
     const url =
-      "https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json" +
+      "http://localhost:3000/items" +
       this.props.product.id;
     Adapter.fetchRequest(url, submissionBody, "PATCH").then(() => {
       this.props.allProducts[

@@ -52,22 +52,22 @@ class Routes extends Component {
     this.props.handleLogin(userinfo);
   };
   componentDidMount() {
-    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json")
+    fetch("http://localhost:3000/items")
       .then((r) => r.json())
       .then((data) => this.getAllProducts(data));
     fetch(
-      "https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/sales_transcations.json"
+      "http://localhost:3000/sales_transcations"
     )
       .then((r) => r.json())
       .then((data) => this.getAllSalesData(data));
-    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/products_sales.json")
+    fetch("http://localhost:3000/product_sales")
       .then((r) => r.json())
       .then((data) => this.getAllProductsSales(data));
-    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/adjustmentjson.json")
+    fetch("http://localhost:3000/adjustments")
       .then((r) => r.json())
       .then((data) => this.getAllAdjustment(data));
     // fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/orders")
-    fetch("https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/orderjson.json")
+    fetch("http://localhost:3000/orders")
     .then((r) => r.json())
     .then((data) => this.getAllOrder(data));
     let token = localStorage.getItem("token");

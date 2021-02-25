@@ -60,7 +60,6 @@ function handleSubmitOrderSearch(event) {
     </div>)
 }
 
-
 function mapStateToProps(state) {
   return {
     allOrders: state.allOrders,

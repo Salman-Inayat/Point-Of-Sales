@@ -51,8 +51,10 @@ const CreateNewItem = (props) => {
       last_cost: props.last_cost,
       barcode: props.barcode,
       unit:props.unit,
+      created_at: new Date(),
+      updated_at: new Date(),
     }
-    const url = "https://raw.githubusercontent.com/Salman-Inayat/Demo-json/main/items.json"
+    const url = "http://localhost:3000/items"
     Adapter.fetchRequest(url, submissionBody, "POST").then(() => {
       console.log("good")
       props.addProduct(submissionBody)
