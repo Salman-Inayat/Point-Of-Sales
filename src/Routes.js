@@ -104,6 +104,12 @@ class Routes extends Component {
         ) : this.props.currentUser ? (
           this.props.currentUser.role.toLowerCase().includes("cashier") ? (
             <Switch>
+               <RouteWithLayout
+                path="/dashboard"
+                component={SalesDashboard}
+                exact
+                layout={MainLayout}
+              />
               <RouteWithLayout
                 component={(routerProps) => <ProfilePage {...routerProps} />}
                 path="/profile"
@@ -169,17 +175,13 @@ class Routes extends Component {
             path="/login"
             exact
           /> */}
-              <RouteWithLayout
+              {/* <RouteWithLayout
                 component={DashboardView}
                 path="/dashboard"
                 exact
                 layout={MainLayout}
-              />
-              <RouteWithLayout
-                path="/sales-dashboard"
-                component={SalesDashboard}
-                layout={MainLayout}
-              />
+              /> */}
+             
               <RouteWithLayout
                 path="/createnewitems"
                 component={CreateNewItem}
@@ -205,6 +207,12 @@ class Routes extends Component {
               <RouteWithLayout
                 component={Order}
                 path="/order"
+                exact
+                layout={MainLayout}
+              />
+               <RouteWithLayout
+                component={SalesDashboard}
+                path="/dashboard"
                 exact
                 layout={MainLayout}
               />

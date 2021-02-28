@@ -23,7 +23,6 @@ const CreateNewItem = (props) => {
       props.getImageUrl(url)
     }))
     // get the file url
-
   }
 
   function handleCreateNewItem(event) {

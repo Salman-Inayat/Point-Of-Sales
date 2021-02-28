@@ -10,15 +10,14 @@ class Reports extends Component {
 
   filterData = (event) => {
     event.preventDefault()
+    if(new Date(this.props.dateRangeFrom)<= new Date(this.props.dateRangeTo)){
+          const reportData = this.props.allProductsSales.filter(sale=>new Date(sale.created_at.slice(0,10))<=new Date(this.props.dateRangeTo) && new Date(sale.created_at.slice(0,10))>=new Date(this.props.dateRangeFrom))
+          this.props.filterSalesData(reportData)
 
-  if(new Date(this.props.dateRangeFrom)<= new Date(this.props.dateRangeTo)){
-        const reportData = this.props.allProductsSales.filter(sale=>new Date(sale.created_at.slice(0,10))<=new Date(this.props.dateRangeTo) && new Date(sale.created_at.slice(0,10))>=new Date(this.props.dateRangeFrom))
-        this.props.filterSalesData(reportData)
-
-  }else {
-    const reportData = []
-    this.props.filterSalesData(reportData)
-  }
+    }else {
+      const reportData = []
+      this.props.filterSalesData(reportData)
+    }
   }
 
   render() {

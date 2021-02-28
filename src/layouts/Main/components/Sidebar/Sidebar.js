@@ -44,13 +44,13 @@ const Sidebar = props => {
 
   const pages = [
     {
-      title: 'Dashboard',
-      href: '/dashboard',
+      title: 'ProfilePage',
+      href: '/profile',
       icon: <DashboardIcon />
     },
     {
-      title: 'ProfilePage',
-      href: '/profile',
+      title: 'Dashboard',
+      href: '/dashboard',
       icon: <DashboardIcon />
     },
     {
@@ -78,11 +78,11 @@ const Sidebar = props => {
       href: '/order',
       icon: <ShoppingBasketIcon />
     },
-    {
-      title: 'Demo video',
-      href: '/video',
-      icon: <AccountBoxIcon />
-    }
+    // {
+    //   title: 'Demo video',
+    //   href: '/video',
+    //   icon: <AccountBoxIcon />
+    // }
   ];
 
   return (

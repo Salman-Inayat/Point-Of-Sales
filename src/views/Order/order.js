@@ -25,6 +25,7 @@ class Order extends Component {
       on_order:true,
       received:false,
       received_by:"Not Yet",
+      image_url: this.props.orderProduct.image_url,
       total_dollars:this.props.orderPrice*this.props.orderQty,
       created_at: new Date(),
       updated_at: new Date(),

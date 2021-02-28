@@ -1,8 +1,8 @@
 import React from 'react';
-import {connect} from "react-redux"
-import DisplayAdjustment from "./DisplayAdjustment"
-import UUID from "uuid"
-import {Link} from 'react-router-dom'
+import {connect} from "react-redux";
+import DisplayAdjustment from "./DisplayAdjustment";
+import UUID from "uuid";
+import {Link} from 'react-router-dom';
 
 const ShowAdjustments = (props)=> {
 

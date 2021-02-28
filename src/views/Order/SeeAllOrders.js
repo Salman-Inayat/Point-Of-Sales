@@ -51,7 +51,7 @@ function handleSubmitOrderSearch(event) {
           <label><input style={{height:'16px'}} type="radio" value="Received" name="Received" checked={props.filterOption === "Received"}/>&nbsp;&nbsp;Received</label>&nbsp;&nbsp;
         </div>
 
-        <input type="text" value={props.ordersSearchInput} onChange={(event)=>props.inputOrdersSearch(event.target.value)} placeholder="search by item name" />
+        <input type="text" value={props.ordersSearchInput} onChange={(event)=>props.inputOrdersSearch(event.target.value)} placeholder="search by item name" required/>
         <button style={{marginLeft:'10px'}} type="submit">Search</button> 
       </form>
       <br></br>
@@ -59,6 +59,7 @@ function handleSubmitOrderSearch(event) {
       <OrderList />
     </div>)
 }
+
 
 function mapStateToProps(state) {
   return {
