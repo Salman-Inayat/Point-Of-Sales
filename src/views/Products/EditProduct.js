@@ -207,9 +207,9 @@ class EditProduct extends Component {
   render() {
     return (
       <div style={{ padding: "20px" }}>
-        <Link style={{ color: "black" }} to="/items">
-          Go back
-        </Link>
+       <Link to="/items" style={{ margin: "30px", color: "black" }}>
+        Go Back
+      </Link>
         <form className="new-item-form" onSubmit={this.handleEditedItem}>
           <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
             Edit Item From

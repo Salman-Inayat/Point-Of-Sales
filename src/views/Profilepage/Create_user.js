@@ -29,6 +29,9 @@ class CreateUser extends Component {
     return (
     <Fragment>
       <div style={{padding:'50px'}}>
+      <Link to="/profile" style={{ margin: "30px", color: "black" }}>
+        Go Back
+      </Link>
         <form className='new-user-form'  onSubmit={this.handleCreateUserSubmit}>
           <h2 style={{textAlign:'center', marginBottom:'20px'}}>Create a User</h2>
           <div className="input-div">

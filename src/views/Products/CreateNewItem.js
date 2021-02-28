@@ -63,8 +63,9 @@ const CreateNewItem = (props) => {
   }
 
   return (<div>
-    <Link to="/home"><i className="home icon big ui left floated teal"></i></Link>
-
+ <Link to="/items" style={{ margin: "30px", color: "black" }}>
+        Go Back
+      </Link>
     <form className='new-item-form' onSubmit={handleCreateNewItem}>
       <h2 style={{textAlign:'center', marginBottom:'20px'}}>Create New Item From</h2>
       <div className="input-div">

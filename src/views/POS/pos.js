@@ -55,7 +55,7 @@ class POS extends Component{
       <div>
         <div style={{width:'60%', float:'left', padding:'30px', margin:'20px 0px 20px 20px'}}>
           <form onSubmit={this.handleAddToCart}>
-            <label><a className="ui label large teal"><i className="add icon"></i>Add Items:</a>
+            <label><a className="ui label large teal" style={{color: "black"}}><i className="add icon"></i>Add Items:</a>
               <div className="ui input"><input type="text" value={this.props.checkoutItemInput} placeholder="Enter barcode or Name" style={{width:'150px'}} onChange={(event) => this.props.handlecheckoutItemInput(event)}/></div></label>
             <button type="submit" value="add to cart">Add to cart</button>
           </form>

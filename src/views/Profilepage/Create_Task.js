@@ -31,6 +31,9 @@ class CreateTask extends Component {
   render() {
     return (
     <div className="create-task-section">
+       <Link to="/profile" style={{ margin: "30px", color: "black" }}>
+        Go Back
+      </Link>
       <form className='new_task_form' onSubmit={this.handleCreateTaskSubmit}>
         <h2 style={{marginBottom:'20px'}}>Create a task for your team member</h2>
         <div className="input-div">
