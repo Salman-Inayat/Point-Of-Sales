@@ -66,6 +66,7 @@ class Routes extends Component {
     fetch("http://localhost:3000/adjustments")
       .then((r) => r.json())
       .then((data) => this.getAllAdjustment(data));
+    // fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/orders")
     fetch("http://localhost:3000/orders")
     .then((r) => r.json())
     .then((data) => this.getAllOrder(data));
@@ -103,12 +104,12 @@ class Routes extends Component {
         ) : this.props.currentUser ? (
           this.props.currentUser.role.toLowerCase().includes("cashier") ? (
             <Switch>
-               <RouteWithLayout
+               {/* <RouteWithLayout
                 path="/dashboard"
                 component={SalesDashboard}
                 exact
                 layout={MainLayout}
-              />
+              /> */}
               <RouteWithLayout
                 component={(routerProps) => <ProfilePage {...routerProps} />}
                 path="/profile"
@@ -209,12 +210,12 @@ class Routes extends Component {
                 exact
                 layout={MainLayout}
               />
-               {/* <RouteWithLayout
+               <RouteWithLayout
                 component={SalesDashboard}
                 path="/dashboard"
                 exact
                 layout={MainLayout}
-              /> */}
+              />
               <RouteWithLayout
                 path="/createuser"
                 component={CreateUser}
