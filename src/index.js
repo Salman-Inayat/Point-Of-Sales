@@ -21,6 +21,16 @@ const config = {
 };
 
 
+// const config = {
+//   apiKey: "AIzaSyAYXwT-tbfWvuKqxrWW-5ENNlTOfNGo_qM",
+//   authDomain: "fyp-osama.firebaseapp.com",
+//   projectId: "fyp-osama",
+//   storageBucket: "fyp-osama.appspot.com",
+//   messagingSenderId: "544702753356",
+//   appId: "1:544702753356:web:0d4314d3e3ace5b8c622e9",
+//   measurementId: "G-1VJJE20RW8"
+// };
+
 firebase.initializeApp(config);
 
 let store = createStore(reducer)

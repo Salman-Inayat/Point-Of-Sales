@@ -1,33 +1,57 @@
-import React from 'react';
+import React, {useState}  from 'react';
 import Adapter from "../../Adapter"
 import {connect} from "react-redux"
 import UUID from "uuid"
 import firebase from "firebase/app"
 import "firebase/storage"
 import {Link} from 'react-router-dom'
-
+import axios from 'axios'
 
 
 const CreateNewItem = (props) => {
 
-  function uploadHandler(event) {
-    event.preventDefault()
+  const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
+  
+  const changeHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+    console.log(event.target.files[0]);
+		// setIsSelected(true);
+  };
+  
+  const uploadHandler = (event) => {
+    const formData = new FormData();
+      formData.append('file', selectedFile);
+      axios.post('http://localhost:3000/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
-    const file = props.image_url
-    const key = UUID();
-    const storageRef = firebase.storage().ref(key + "/" + file.name)
+  // function uploadHandler(event) {
+  //   event.preventDefault()
 
-    // upload the file
-    storageRef.put(file).then(() => firebase.storage().ref(key).child(file.name).getDownloadURL().then(url => {
-      document.getElementById('preview').src = url
-      props.getImageUrl(url)
-    }))
-    // get the file url
-  }
+  //   const file = props.image_url
+  //   const key = UUID();
+  //   const storageRef = firebase.storage().ref(key + "/" + file.name)
+
+  //   // upload the file
+  //   storageRef.put(file).then(() => firebase.storage().ref(key).child(file.name).getDownloadURL().then(url => {
+  //     document.getElementById('preview').src = url
+  //     props.getImageUrl(url)
+  //   }))
+  //   // get the file url
+  // }
 
   function handleCreateNewItem(event) {
     event.preventDefault()
-    console.log("submit")
     const submissionBody = {
       user_id: props.currentUser.id,
       item_name: props.newProductName,
@@ -59,7 +83,6 @@ const CreateNewItem = (props) => {
       props.addProduct(submissionBody)
       props.history.push("/items")
     })
-
   }
 
   return (<div>
@@ -114,7 +137,8 @@ const CreateNewItem = (props) => {
       </div>
       <div className="input-div">
         <label className="left-label" >Upload Product Image</label>
-        <input  type="file" style={{width:'30%'}} onChange={(event) => props.newImage_url(event)}/>
+        {/* <input  type="file" name="my_image" style={{width:'30%'}} onChange={(event) => props.newImage_url(event)}/> */}
+        <input  type="file" name="file" style={{width:'30%'}} onChange={changeHandler}/>
       <button onClick={uploadHandler} className="button file-upload-button">Click to Upload</button>
       </div>
       <div className="input-div">
@@ -127,7 +151,7 @@ const CreateNewItem = (props) => {
       </div>
       <button type="submit" style={{marginTop:'30px'}}>Create New Item</button>
     </form>
-    {props.image_url ? <img id="preview" src={props.image_url} height="222" width="332" alt="Please Click Upload"/> : null}
+    {/* {props.image_url ? <img id="preview" src={props.image_url} height="222" width="332" alt="Please Click Upload"/> : null} */}
   </div>)
 
 }
