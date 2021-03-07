@@ -21,18 +21,19 @@ const CreateNewItem = (props) => {
   
   const uploadHandler = (event) => {
     const formData = new FormData();
-      formData.append('file', selectedFile);
-      axios.post('http://localhost:3000/', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    formData.append('file', selectedFile);
+    formData.append('barcode', props.barcode);
+    axios.post('http://localhost:5000/', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   };
 
   // function uploadHandler(event) {
@@ -69,7 +70,7 @@ const CreateNewItem = (props) => {
       annualized_sales: props.annualized_sales,
       annualized_qty: props.annualized_qty,
       category: props.category,
-      image_url: props.image_url,
+      image_url: "",
       last_edited_by: props.currentUser.username,
       last_cost: props.last_cost,
       barcode: props.barcode,
@@ -147,7 +148,7 @@ const CreateNewItem = (props) => {
       </div>
       <div className="input-div">
         <label className="left-label" >Barcode</label>
-        <input className="right-label" type="text"  value={props.barcode} onChange={(event) => props.newBarcode(event)}required/>
+        <input className="right-label" type="text"  value={props.barcode} name="barcode" onChange={(event) => props.newBarcode(event)}required/>
       </div>
       <button type="submit" style={{marginTop:'30px'}}>Create New Item</button>
     </form>
