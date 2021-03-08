@@ -43,11 +43,11 @@ const Sidebar = props => {
   const classes = useStyles();
 
   const pages = [
-    {
-      title: 'ProfilePage',
-      href: '/profile',
-      icon: <DashboardIcon />
-    },
+    // {
+    //   title: 'ProfilePage',
+    //   href: '/profile',
+    //   icon: <DashboardIcon />
+    // },
     {
       title: 'Dashboard',
       href: '/dashboard',

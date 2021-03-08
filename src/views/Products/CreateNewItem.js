@@ -21,7 +21,7 @@ const CreateNewItem = (props) => {
     formData.append("file", selectedFile);
     formData.append("name", image_name);
     axios
-      .post("http://localhost:5000/", formData, {
+      .post("http://localhost:10000/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -51,7 +51,7 @@ const CreateNewItem = (props) => {
 
   function handleCreateNewItem(event) {
     event.preventDefault();
-    let mongo_image_url = "http://localhost:5000/images/"+image_name;
+    let mongo_image_url = "http://localhost:10000/images/"+image_name;
     const submissionBody = {
       user_id: props.currentUser.id,
       item_name: props.newProductName,
