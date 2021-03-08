@@ -77,6 +77,29 @@
       "created_at": "2021-02-28T09:17:15.721Z",
       "updated_at": "2021-02-28T09:17:15.721Z",
       "id": 6
+    },
+    {
+      "item_name": "pepperoni pizza",
+      "retail_price": "2121",
+      "pomo_price": "232321",
+      "most_recent_vendor": "demo vwenaA",
+      "order": 0,
+      "inventory": 0,
+      "adjustment": 0,
+      "status": "actrive",
+      "sales": 0,
+      "forecast_sales_three_months": "2123",
+      "need_to_order_for_next_three_months": "2313",
+      "annualized_sales": "121",
+      "annualized_qty": "323",
+      "category": "pizza",
+      "image_url": "http://localhost:10000/images/pepperoni pizza",
+      "last_cost": "23232",
+      "barcode": "31",
+      "unit": "LB",
+      "created_at": "2021-03-08T18:04:46.921Z",
+      "updated_at": "2021-03-08T18:04:46.921Z",
+      "id": 7
     }
   ],
   "orders": [
@@ -147,6 +170,40 @@
       "created_at": "2021-03-01T13:56:18.881Z",
       "updated_at": "2021-03-01T13:56:18.881Z",
       "id": 10
+    },
+    {
+      "product_id": 4,
+      "product_name": "bear",
+      "qty": "6",
+      "price": "7",
+      "vendor_name": "bear",
+      "user_id": 1,
+      "order_by": "admin",
+      "on_order": true,
+      "received": false,
+      "received_by": "Not Yet",
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/mod5project-35643.appspot.com/o/dc1fa7f1-c717-404f-9267-429b50078316%2Fgrizzly.PNG?alt=media&token=936868df-72ee-42a4-bbea-710cc72505e6",
+      "total_dollars": 42,
+      "created_at": "2021-03-01T15:13:25.633Z",
+      "updated_at": "2021-03-01T15:13:25.633Z",
+      "id": 11
+    },
+    {
+      "product_id": 7,
+      "product_name": "Pepperoni pizza",
+      "qty": "4",
+      "price": "456",
+      "vendor_name": "Pizza",
+      "user_id": 1,
+      "order_by": "admin",
+      "on_order": true,
+      "received": false,
+      "received_by": "Not Yet",
+      "image_url": "http://localhost:5000/images/Pepperoni pizza",
+      "total_dollars": 1824,
+      "created_at": "2021-03-08T12:58:33.880Z",
+      "updated_at": "2021-03-08T12:58:33.880Z",
+      "id": 12
     }
   ],
   "adjustments": [
