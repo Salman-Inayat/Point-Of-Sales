@@ -20,7 +20,7 @@ const Footer = props => {
       <Typography variant="body1">
         &copy;{' '}
         <Link component="a" target="_blank">
-          JehadiFYP
+          In-Store Video Analytics
         </Link>
         . 2020
       </Typography>
