@@ -154,7 +154,7 @@ class DisplayOrder extends Component {
           )}
         </div>
         <div className="order-card-right">
-          {/* <img className="" src={this.props.allProducts.find(product => product.id === this.props.order.product_id)} alt="" /> */}
+          <img className="" src={this.props.allProducts.find(product => product.id === this.props.order.product_id).image_url} alt="" />
         </div>
       </div>
     );
