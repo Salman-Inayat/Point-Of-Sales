@@ -8,19 +8,19 @@ import  '../../App.css'
 
 class ProfilePage extends Component {
 
-  addTodoList = (data) => {
-    // console.log("checking",data)
-    // console.log("username", this.props.currentUser)
-     const user_Todolists = data.filter(todolist => {
-       return todolist.to_username.toLowerCase() === this.props.currentUser.username.toLowerCase()
-     })
-    this.props.showToDoLists(user_Todolists)
+  // addTodoList = (data) => {
+  //   // console.log("checking",data)
+  //   // console.log("username", this.props.currentUser)
+  //   //  const user_Todolists = data.filter(todolist => {
+  //   //    return todolist.to_username.toLowerCase() === this.props.currentUser.username.toLowerCase()
+  //   //  })
+  //   this.props.showToDoLists(user_Todolists)
 
-    // console.log("to do List", user_Todolists)
-  }
-  componentDidMount() {
-    fetch("https://limitless-fjord-48119.herokuapp.com//api/v1/todolists").then(r => r.json()).then(data => this.addTodoList(data))
-  }
+  //   // console.log("to do List", user_Todolists)
+  // }
+  // componentDidMount() {
+  //   fetch("https://limitless-fjord-48119.herokuapp.com//api/v1/todolists").then(r => r.json()).then(data => this.addTodoList(data))
+  // }
 
   handleCreateTask = () => {
     this.props.history.push("/createtask")
@@ -66,7 +66,7 @@ class ProfilePage extends Component {
 
         <div className="new-buttons">
           <button type="button"  onClick={this.handleCreateTask}>Create New Task</button>
-          {this.props.currentUser.role.toLowerCase().includes("cashier") ? null : <button type="button" onClick={this.handleCreateUser}>Create New User</button>}
+          {/* {this.props.currentUser.role.toLowerCase().includes("cashier") ? null : <button type="button" onClick={this.handleCreateUser}>Create New User</button>} */}
           <button type="button" onClick={this.handleAllTasks}>Tasks Created</button>
         </div>
 

@@ -1,29 +1,49 @@
-import React from 'react';
-import {connect} from "react-redux"
+import React from "react";
+import { Component } from "react";
+import { connect } from "react-redux";
+// import { useHistory } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
-const LogoutButton = (props)=>{
+class LogoutButton extends Component {
+  // const history = useHistory();
+  state = {
+    redirect: false,
+  };
+  // setRedirect = () => {
+  //   this.setState({
+  //     redirect: true,
+  //   });
+  // };
 
-  function logout() {
-    localStorage.removeItem("token")
-    props.handleLogout()
+  logout = () => {
+    sessionStorage.removeItem("auth-token");
+    this.setState({
+      redirect: true,
+    });
+    console.log("logged out");
+    // props.handleLogout()
+  };
+
+  render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+
+    return <button onClick={this.logout}>Logout</button>;
   }
-
-  return(
-    <button onClick={logout}>Logout</button>
-    )
 }
 
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-   }
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-  return{
-    handleLogout:() => {
-      dispatch({type: "LOGOUT"})
+  return {
+    handleLogout: () => {
+      dispatch({ type: "LOGOUT" });
     },
-  }
+  };
 }
-export default connect(mapStateToProps,mapDispatchToProps)(LogoutButton);
+export default connect(mapStateToProps, mapDispatchToProps)(LogoutButton);

@@ -41,7 +41,7 @@ const Topbar = props => {
     <AppBar {...rest} className={clsx(classes.root, className)}>
       <Toolbar className={clsx(classes.navbar)}>
         <RouterLink to="/" className={clsx(classes.logo, className)}>
-          <h1>JehadiFYP.</h1>
+          <h1>Point of Sale</h1>
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
@@ -53,12 +53,12 @@ const Topbar = props => {
               <NotificationsIcon fontSize="inherit" />
             </Badge>
           </IconButton>
-          <IconButton 
+          {/* <IconButton 
             className={(classes.signOutButton, classes.fontSize2rem)}
             color="inherit">
             <InputIcon fontSize="inherit" />
-          </IconButton>
-          <LogoutButton/>
+          </IconButton> */}
+          <LogoutButton />
         </Hidden>
         <Hidden lgUp>
           <IconButton

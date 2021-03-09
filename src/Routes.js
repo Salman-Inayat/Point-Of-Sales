@@ -70,20 +70,33 @@ class Routes extends Component {
     fetch("http://localhost:3000/orders")
     .then((r) => r.json())
     .then((data) => this.getAllOrder(data));
-    let token = localStorage.getItem("token");
-    if (token) {
-      fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/current_user", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-      })
-        .then((r) => r.json())
-        .then((data) => this.getCurrentUser(data.user_details, data.todolists))
-        .catch((err) => {
-          localStorage.removeItem("token");
-          this.props.history.push("/");
-        });
+    // let token = localStorage.getItem("token");
+    // if (token) {
+    //   fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/current_user", {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Authorization: token,
+    //     },
+    //   })
+    //     .then((r) => r.json())
+    //     .then((data) => this.getCurrentUser(data.user_details, data.todolists))
+    //     .catch((err) => {
+    //       localStorage.removeItem("token");
+    //       this.props.history.push("/");
+    //     });
+    // }
+    if (!sessionStorage.getItem('auth-token')) {
+      console.log('no auth token set');
+      this.props.history.push('/')
+    } else {
+        const authToken = '123456abcdef';
+        if (sessionStorage.getItem('auth-token') == authToken) {
+            console.log('good token. Log in.')
+            this.props.history.push('/')
+        } else {
+            console.log('bad token.')
+            this.props.history.push('/')
+        }
     }
   }
 
@@ -98,11 +111,11 @@ class Routes extends Component {
           path="/login"
           render={(routerProps) => <Login {...routerProps} />}
         />
-        {!localStorage.getItem("token") &&
+        {/* {!localStorage.getItem("token") &&
         this.props.history.location.pathname !== "/login" ? (
           <Redirect to="/" />
         ) : this.props.currentUser ? (
-          this.props.currentUser.role.toLowerCase().includes("cashier") ? (
+          this.props.currentUser.role.toLowerCase().includes("cashier") ? ( */}
             <Switch>
                {/* <RouteWithLayout
                 path="/dashboard"
@@ -135,9 +148,9 @@ class Routes extends Component {
                 layout={MainLayout}
               />
               <Route path="/alltasks" component={AllTasks} />
-            </Switch>
-          ) : (
-            <Switch>
+            {/* </Switch> */}
+          {/* ) : (
+            <Switch> */}
               <Route path="/createtask" component={CreateTask} />
               <Route path="/alltasks" component={AllTasks} />
               <RouteWithLayout
@@ -275,7 +288,7 @@ class Routes extends Component {
               />
             </Switch>
           )
-        ) : null}
+        {/* ) : null} */}
       </Fragment>
     );
   }
