@@ -29,7 +29,7 @@ class LogoutButton extends Component {
       return <Redirect to="/" />;
     }
 
-    return <button onClick={this.logout}>Logout</button>;
+    return <button style={{border:'2px solid white', cursor: 'pointer'}} onClick={this.logout}>Logout</button>;
   }
 }
 
