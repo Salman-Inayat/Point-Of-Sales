@@ -9,10 +9,10 @@
       "most_recent_vendor": "demo bear",
       "created_by": "admin",
       "order": 54,
-      "inventory": 0,
+      "inventory": -1.04,
       "adjustment": "6.00",
       "status": "active",
-      "sales": "60",
+      "sales": 61.04,
       "forecast_sales_three_months": "2",
       "need_to_order_for_next_three_months": "1",
       "annualized_sales": "100",
@@ -34,10 +34,10 @@
       "most_recent_vendor": "demo vendor",
       "created_by": "admin",
       "order": 17,
-      "inventory": 17,
+      "inventory": 16,
       "adjustment": 0,
       "status": "active",
-      "sales": 0,
+      "sales": 1,
       "forecast_sales_three_months": "200",
       "need_to_order_for_next_three_months": "300",
       "annualized_sales": "200",
@@ -60,10 +60,10 @@
       "most_recent_vendor": "strawberry cake vendor",
       "created_by": "admin",
       "order": 12,
-      "inventory": 12,
+      "inventory": -5,
       "adjustment": 0,
       "status": "active",
-      "sales": 0,
+      "sales": 17,
       "forecast_sales_three_months": "200",
       "need_to_order_for_next_three_months": "200",
       "annualized_sales": "200",
@@ -84,10 +84,10 @@
       "pomo_price": "232321",
       "most_recent_vendor": "demo vwenaA",
       "order": 0,
-      "inventory": 0,
+      "inventory": -4,
       "adjustment": 0,
       "status": "actrive",
-      "sales": 0,
+      "sales": 4,
       "forecast_sales_three_months": "2123",
       "need_to_order_for_next_three_months": "2313",
       "annualized_sales": "121",
@@ -232,16 +232,16 @@
       "id": 2
     }
   ],
-  "sales_transcations": [
+  "sales_transactions": [
     {
       "id": 251,
-      "total": "86.71",
-      "total_saving": "86.71",
-      "user_id": 1,
-      "cash_from_customer": "90.0",
-      "change_to_customer": "-3.29",
-      "created_at": "2018-08-22T18:14:40.880Z",
-      "updated_at": "2018-08-22T18:14:50.556Z",
+      "total": "240.00",
+      "total_saving": "240.00",
+      "user_id": 2,
+      "cash_from_customer": "32323",
+      "change_to_customer": "-32083.00",
+      "created_at": "2021-03-11T15:56:26.930Z",
+      "updated_at": "2021-03-11T15:56:26.930Z",
       "products_sales": [
         {
           "id": 128,
@@ -270,6 +270,14 @@
           "updated_at": "2018-08-22T18:14:50.511Z"
         }
       ]
+    },
+    {
+      "user_id": 2,
+      "id": 252
+    },
+    {
+      "user_id": 2,
+      "id": 253
     }
   ],
   "product_sales": [
@@ -285,6 +293,132 @@
       "pomo_price": "2.99",
       "created_at": "2018-01-03T00:00:00.000Z",
       "updated_at": "2018-01-03T00:00:00.000Z"
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 6,
+      "qty": 1,
+      "total": "240",
+      "total_saving": 10,
+      "product_name": "Strawberry Cake",
+      "retail_price": "250",
+      "pomo_price": "240",
+      "created_at": "2021-03-11",
+      "id": 2
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 6,
+      "qty": 1,
+      "total": "240",
+      "total_saving": 10,
+      "product_name": "Strawberry Cake",
+      "retail_price": "250",
+      "pomo_price": "240",
+      "created_at": "2021-03-11",
+      "id": 3
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 5,
+      "qty": 1,
+      "total": "20",
+      "total_saving": 80,
+      "product_name": "cake",
+      "retail_price": "100",
+      "pomo_price": "20",
+      "created_at": "2021-03-11",
+      "id": 4
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 7,
+      "qty": 1,
+      "total": "232321",
+      "total_saving": -230200,
+      "product_name": "pepperoni pizza",
+      "retail_price": "2121",
+      "pomo_price": "232321",
+      "created_at": "2021-03-11",
+      "id": 5
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 7,
+      "qty": 1,
+      "total": "232321",
+      "total_saving": -230200,
+      "product_name": "pepperoni pizza",
+      "retail_price": "2121",
+      "pomo_price": "232321",
+      "created_at": "2021-03-11",
+      "updated_at": "2021-03-11T16:09:16.898Z",
+      "id": 6
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 7,
+      "qty": 1,
+      "total": "232321",
+      "total_saving": -230200,
+      "product_name": "pepperoni pizza",
+      "retail_price": "2121",
+      "pomo_price": "232321",
+      "created_at": "2021-03-11",
+      "updated_at": "2021-03-11T16:10:30.987Z",
+      "id": 7
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 7,
+      "qty": 1,
+      "total": "232321",
+      "total_saving": -230200,
+      "product_name": "pepperoni pizza",
+      "retail_price": "2121",
+      "pomo_price": "232321",
+      "created_at": "2021-03-11",
+      "updated_at": "2021-03-11T16:11:18.237Z",
+      "id": 8
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 4,
+      "qty": 1.04,
+      "total": "3.11",
+      "total_saving": 2.08,
+      "product_name": "bear",
+      "retail_price": "4.99",
+      "pomo_price": "2.99",
+      "created_at": "2021-03-11",
+      "updated_at": "2021-03-11T16:12:56.243Z",
+      "id": 9
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 6,
+      "qty": 4,
+      "total": "960.00",
+      "total_saving": 40,
+      "product_name": "Strawberry Cake",
+      "retail_price": "250",
+      "pomo_price": "240",
+      "created_at": "2021-03-11",
+      "updated_at": "2021-03-11T16:18:25.932Z",
+      "id": 10
+    },
+    {
+      "sales_transcation_id": 251,
+      "product_id": 6,
+      "qty": 4,
+      "total": "960.00",
+      "total_saving": 40,
+      "product_name": "Strawberry Cake",
+      "retail_price": "250",
+      "pomo_price": "240",
+      "created_at": "2021-03-11",
+      "updated_at": "2021-03-11T16:21:47.070Z",
+      "id": 11
     }
   ]
 }
