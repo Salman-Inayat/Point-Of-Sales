@@ -11,12 +11,12 @@ import '../../App.css'
 class POS extends Component{
 
   currentTransaction = () => {
-    // this.props.disableDeleteButton()
-    const url = "http://localhost:3000/sales_transactions"
-    const submissionBody = {
-      user_id: 2
-    }
-    Adapter.fetchRequest(url, submissionBody, "POST")
+    // // this.props.disableDeleteButton()
+    // const url = "http://localhost:3000/sales_transactions"
+    // const submissionBody = {
+    //   user_id: 2
+    // }
+    // Adapter.fetchRequest(url, submissionBody, "POST")
     this.props.checkout()
 
     let initialTotalDollar = 0
