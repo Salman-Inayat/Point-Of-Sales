@@ -12,9 +12,9 @@ class POS extends Component{
 
   currentTransaction = () => {
     // this.props.disableDeleteButton()
-    const url = "https://limitless-fjord-48119.herokuapp.com/api/v1/sales_transcations"
+    const url = "http://localhost:3000/sales_transactions"
     const submissionBody = {
-      user_id: this.props.currentUser.id
+      user_id: 2
     }
     Adapter.fetchRequest(url, submissionBody, "POST")
     this.props.checkout()

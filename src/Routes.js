@@ -70,21 +70,7 @@ class Routes extends Component {
     fetch("http://localhost:3000/orders")
     .then((r) => r.json())
     .then((data) => this.getAllOrder(data));
-    // let token = localStorage.getItem("token");
-    // if (token) {
-    //   fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/current_user", {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       Authorization: token,
-    //     },
-    //   })
-    //     .then((r) => r.json())
-    //     .then((data) => this.getCurrentUser(data.user_details, data.todolists))
-    //     .catch((err) => {
-    //       localStorage.removeItem("token");
-    //       this.props.history.push("/");
-    //     });
-    // }
+
     if (!sessionStorage.getItem('auth-token')) {
       console.log('no auth token set');
       this.props.history.push('/')

@@ -1,11 +1,9 @@
 import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux";
-// import { useHistory } from 'react-router-dom';
 import { Redirect } from "react-router-dom";
 
 class LogoutButton extends Component {
-  // const history = useHistory();
   state = {
     redirect: false,
   };

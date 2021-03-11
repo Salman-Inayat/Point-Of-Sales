@@ -10,16 +10,17 @@ const Checkout = (props) => {
       alert("Your change: " + (
       props.customerPay - props.checkoutTotalDollar).toFixed(2))
     }
-    fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/sales_transcations").then(r => r.json()).then(data => {
+    fetch("http://localhost:3000/sales_transactions").then(r => r.json()).then(data => {
       // debugger;
-      const findTranscations = data.find(transcation => transcation.user_id === props.currentUser.id && transcation.total_saving === null)
+      const findTranscations = data.find(transcation => transcation.user_id === 2 && transcation.total_saving !== null)
+      console.log(findTranscations)
       const currentTransactionId = findTranscations.id
-      const url = "https://limitless-fjord-48119.herokuapp.com/api/v1/products_sales"
+      console.log(currentTransactionId)
+      const url = "http://localhost:3000/product_sales"
 
       let allItemSales=[]
       const today = new Date()
       props.checkoutItems.forEach(item => {
-
         let submissionBody = {
           sales_transcation_id: currentTransactionId,
           product_id: item.id,
@@ -28,7 +29,9 @@ const Checkout = (props) => {
           total_saving: item.totalSavings,
           product_name: item.item_name,
           retail_price: item.retail_price,
-          pomo_price: item.pomo_price
+          pomo_price: item.pomo_price,
+          created_at: new Date(),
+          updated_at: new Date(),
         }
 
 
@@ -62,7 +65,7 @@ const Checkout = (props) => {
           }
 
 
-        const productUrl="https://limitless-fjord-48119.herokuapp.com/api/v1/products/"+item.id
+        const productUrl="http://localhost:3000/items/"+item.id
         let productSubmissionBody = {
           inventory:item.inventory-item.checkoutqty,
           sales:parseFloat(item.sales)+parseFloat(item.checkoutqty)
@@ -77,12 +80,14 @@ const Checkout = (props) => {
       })
 
 
-      const transcationUrl = "https://limitless-fjord-48119.herokuapp.com/api/v1/sales_transcations/" + currentTransactionId
+      const transcationUrl = "http://localhost:3000/sales_transactions/" 
       const updateTransaction = {
         total: props.checkoutTotalDollar,
         total_saving: props.checkoutTotalSaving,
         cash_from_customer: props.customerPay,
-        change_to_customer: (props.checkoutTotalDollar - props.customerPay).toFixed(2)
+        change_to_customer: (props.checkoutTotalDollar - props.customerPay).toFixed(2),
+        created_at: new Date(),
+        updated_at: new Date(),
       }
 
       Adapter.fetchRequest(transcationUrl, updateTransaction, "PATCH")
@@ -158,11 +163,11 @@ const Checkout = (props) => {
 function mapStateToProps(state) {
   return {checkoutTotalDollar: state.checkoutTotalDollar,
     checkoutTotalSaving: state.checkoutTotalSaving,
-     customerPay: state.customerPay,
-     currentUser: state.currentUser,
-      checkoutItems: state.checkoutItems,
-      allProducts:state.allProducts,
-    }
+    customerPay: state.customerPay,
+    currentUser: state.currentUser,
+    checkoutItems: state.checkoutItems,
+    allProducts:state.allProducts,
+  }
 }
 
 function mapDispatchToProps(dispatch) {
