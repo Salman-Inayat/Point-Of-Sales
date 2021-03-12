@@ -4,16 +4,13 @@ import {Link} from 'react-router-dom'
 import UUID from "uuid"
 import Download from "./Download"
 import DisplayProductSale from "./DisplayProductSale"
-
-
 class Reports extends Component {
-
   filterData = (event) => {
     event.preventDefault()
-    if(new Date(this.props.dateRangeFrom)<= new Date(this.props.dateRangeTo)){
-          const reportData = this.props.allProductsSales.filter(sale=>new Date(sale.created_at.slice(0,10))<=new Date(this.props.dateRangeTo) && new Date(sale.created_at.slice(0,10))>=new Date(this.props.dateRangeFrom))
-          this.props.filterSalesData(reportData)
-
+    if(new Date(this.props.dateRangeFrom) <= new Date(this.props.dateRangeTo)){
+      console.log('working')
+      const reportData = this.props.allProductsSales.filter(sale=>new Date(sale.created_at.slice(0,10)) <= new Date(this.props.dateRangeTo) && new Date(sale.created_at.slice(0,10)) >= new Date(this.props.dateRangeFrom))
+      this.props.filterSalesData(reportData)
     }else {
       const reportData = []
       this.props.filterSalesData(reportData)
@@ -32,10 +29,9 @@ class Reports extends Component {
         </form>
         <Download />
         </div>
-        
-      {
+      {/* {
         this.props.reportData.length === 0
-          ? null
+          ? null */}
           :
           <div className="center-SalesSummary">
           <table style={{padding:'20px 40px', backgroundColor:'#d0cece', borderRadius:'10px', margin:'0px auto'}}>
@@ -57,7 +53,7 @@ class Reports extends Component {
               </tbody>
             </table>
             </div>
-      }
+        {/* } */}
     </div>)
   }
 }
