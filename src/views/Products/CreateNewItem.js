@@ -34,21 +34,6 @@ const CreateNewItem = (props) => {
       });
   };
 
-  // function uploadHandler(event) {
-  //   event.preventDefault()
-
-  //   const file = props.image_url
-  //   const key = UUID();
-  //   const storageRef = firebase.storage().ref(key + "/" + file.name)
-
-  //   // upload the file
-  //   storageRef.put(file).then(() => firebase.storage().ref(key).child(file.name).getDownloadURL().then(url => {
-  //     document.getElementById('preview').src = url
-  //     props.getImageUrl(url)
-  //   }))
-  //   // get the file url
-  // }
-
   function handleCreateNewItem(event) {
     event.preventDefault();
     let mongo_image_url = "http://localhost:10000/images/"+image_name;
