@@ -32,7 +32,7 @@ class Reports extends Component {
       {/* {
         this.props.reportData.length === 0
           ? null */}
-          :
+          
           <div className="center-SalesSummary">
           <table style={{padding:'20px 40px', backgroundColor:'#d0cece', borderRadius:'10px', margin:'0px auto'}}>
               <thead>
