@@ -1,32 +1,43 @@
 import React, {Component} from "react";
-import video from "../video.mp4";
-import mainFunction from "./main";
+import '../css/styles.css';
+import FaceModel from './main.js';
+import demo from './demo.mp4'
 
 class VideoJs extends Component{
-    componentDidMount() {
-        mainFunction();
-      }
-
-    render(){
-        return(
-            <div>
-                <video src={video} controls loop id="video" height="540" width="720" autoplay muted>
-                </video>
-                {/* 
-                <ScriptTag type="text/javascript" src="./demo.js" />
-                <ScriptTag type="text/javascript" src="./face-api.min.js" />
-                <ScriptTag type="text/javascript" src="./main.js"/>
-                <Helmet>
-                    <script src="./main.js" type="text/javascript" />
-                    <script src="./face-api.min.js" type="text/javascript" />
-                </Helmet>
-                <Script
-                    src="./demo.js"
-                    type="text/javascript"
-                    async
-                /> */}
-            </div>
-        )
+    constructor(props) {
+        super(props);
+        this.streamCamVideo = this.streamCamVideo.bind(this);
+        // this.state = {
+        //   face_label: "",
+        //   face_desc: []
+        // }
+    }
+    streamCamVideo() {
+      var constraints = { audio: false, video: { width: 720, height: 540 } };
+      navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(function(mediaStream) {
+          var video = document.querySelector("video");
+  
+          video.srcObject = mediaStream;
+          video.onloadedmetadata = function(e) {
+            video.play();
+          };
+        })
+        .catch(function(err) {
+          console.log(err.name + ": " + err.message);
+        }); // always check for errors at the end.
+    }
+    // componentDidMount() {
+    //   FaceModel()
+    // }
+    render() {
+      return (
+          <div id="container" style={{position:'relative'}}>
+            <video src={demo} autoPlay={true} id="video" controls height="540" width="720"></video>
+            <FaceModel style={{position:"absolute", left:'0%',top:'0%'}}></FaceModel>
+          </div>
+      );
     }
 }
 
