@@ -3,21 +3,21 @@
 
 ### How to run React part
 
-### npm install
+#### npm install
 
-### npm start
-## --------------------------
+#### npm start
+
 
 ### How to run Node server
 
-### npm install
+#### npm install
 
-### node server.js
-## --------------------------
+#### node server.js
+
 
 ### How to run json-server
 
-### json-server --watch db.json
+#### json-server --watch db.json
 
 
 ![image](https://user-images.githubusercontent.com/45660519/114597176-e6c4df00-9ca9-11eb-92d6-7cb5157dbab1.png)
