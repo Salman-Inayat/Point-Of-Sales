@@ -19,7 +19,11 @@ class POS extends Component{
   }
 
   currentTransaction = () => {
+<<<<<<< HEAD
     // this.props.disableDeleteButton()
+=======
+    // // this.props.disableDeleteButton()
+>>>>>>> b44116fb5fbfb98f97453385fe259500730ae3d6
     // const url = "http://localhost:3000/sales_transactions"
     // const submissionBody = {
     //   user_id: 2
