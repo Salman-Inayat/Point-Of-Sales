@@ -26,7 +26,7 @@ import HomeComponent from "../src/landing_pages/home_page/index";
 import AboutUs from "../src/landing_pages/about_page/index";
 import ContactUs from "../src/landing_pages/contactus_page/index";
 import Video from "../src/views/Video/js/video";
-
+import CustomerAnalytics from "./views/CustomerAnalytics/CustomerAnalytics";
 class Routes extends Component {
   getAllSalesData = (data) => {
     this.props.fetchAllSalesData(data);
@@ -56,7 +56,7 @@ class Routes extends Component {
       .then((r) => r.json())
       .then((data) => this.getAllProducts(data));
     fetch(
-      "http://localhost:3000/sales_transcations"
+      "http://localhost:3000/sales_transactions"
     )
       .then((r) => r.json())
       .then((data) => this.getAllSalesData(data));
@@ -70,7 +70,21 @@ class Routes extends Component {
     fetch("http://localhost:3000/orders")
     .then((r) => r.json())
     .then((data) => this.getAllOrder(data));
-
+    // let token = localStorage.getItem("token");
+    // if (token) {
+    //   fetch("https://limitless-fjord-48119.herokuapp.com/api/v1/current_user", {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Authorization: token,
+    //     },
+    //   })
+    //     .then((r) => r.json())
+    //     .then((data) => this.getCurrentUser(data.user_details, data.todolists))
+    //     .catch((err) => {
+    //       localStorage.removeItem("token");
+    //       this.props.history.push("/");
+    //     });
+    // }
     if (!sessionStorage.getItem('auth-token')) {
       console.log('no auth token set');
       this.props.history.push('/')
@@ -220,6 +234,11 @@ class Routes extends Component {
                 component={CreateUser}
                 layout={MainLayout}
               />
+              <RouteWithLayout
+                path="/analytics"
+                component={CustomerAnalytics}
+                layout={MainLayout}
+              />
               <Route
                 path="/products/:id/orders"
                 render={(routerProps) => {
@@ -273,7 +292,6 @@ class Routes extends Component {
                 }}
               />
             </Switch>
-          )
         {/* ) : null} */}
       </Fragment>
     );

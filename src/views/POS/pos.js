@@ -1,22 +1,30 @@
 import React, {Component, useRef} from 'react';
 import {Link} from 'react-router-dom'
-import Webcam from "react-webcam";
+//import Webcam from "react-webcam";
 import {connect} from "react-redux"
 import UUID from "uuid"
 import Checkout from "./Checkout"
 import Adapter from '../../Adapter'
 import ProductSale from "../Products/ProductSale"
 import '../../App.css'
+import FaceModel from '../Video/js/face.js'
+import demo from '../Video/js/demo.mp4';
 
 class POS extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      faces: []
+    };
+  }
 
   currentTransaction = () => {
     // this.props.disableDeleteButton()
-    const url = "http://localhost:3000/sales_transactions"
-    const submissionBody = {
-      user_id: 2
-    }
-    Adapter.fetchRequest(url, submissionBody, "POST")
+    // const url = "http://localhost:3000/sales_transactions"
+    // const submissionBody = {
+    //   user_id: 2
+    // }
+    // Adapter.fetchRequest(url, submissionBody, "POST")
     this.props.checkout()
 
     let initialTotalDollar = 0
@@ -49,7 +57,7 @@ class POS extends Component{
     }
 
   }
-
+  
   render(){
     return (
       <div>
@@ -93,13 +101,9 @@ class POS extends Component{
             Checkout</button>
           </div>
         </div>
-        <div  style={{width:'37.5%', paddingTop:'40px', float:'right'}}>
-          <Webcam
-          audio={false}
-          height={250}
-          width={350}
-          style={{borderRadius:'10px'}}
-        />
+        <div id="container" style={{position:'absolute'},{height: "540"},{width: "720"},{top: "50%"}}>
+          <video src={demo} autoPlay={true} id="video" controls height="540" width="720"></video>
+          <FaceModel></FaceModel>
         </div>
     </div>
     )

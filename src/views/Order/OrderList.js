@@ -3,7 +3,6 @@ import {connect} from "react-redux"
 import DisplayOrder from "./DisplayOrder"
 import UUID from "uuid"
 
-
 const OrderList=(props)=>{
 
   return(<div className="ui four centered cards">

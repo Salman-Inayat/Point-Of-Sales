@@ -81,11 +81,8 @@ class DisplayOrder extends Component {
           (product) => product.id === this.props.order.product_id
         );
         const productSubmissionBody = {
-          order:
-            parseFloat(currentProduct.order) + parseFloat(this.props.order.qty),
-          inventory:
-            parseFloat(currentProduct.inventory) +
-            parseFloat(this.props.order.qty),
+          order: parseFloat(currentProduct.order) + parseFloat(this.props.order.qty),
+          inventory: parseFloat(currentProduct.inventory) + parseFloat(this.props.order.qty),
           last_cost: this.props.order.price,
           most_recent_vendor: this.props.order.vendor_name,
         };
@@ -113,9 +110,10 @@ class DisplayOrder extends Component {
       window.location.reload(true);
     }
   };
+
   render() {
-    //  const hello = this.props.allProducts.find(product => product.id === this.props.order.product_id);
-    //  console.log(hello.category);
+    console.log(this.props.order.product_id)
+    console.log(this.props.allProducts.find(product => product.id === this.props.order.product_id))
     return (
       <div className="order-card">
         <div className="order-card-left" id="center-order-card">
