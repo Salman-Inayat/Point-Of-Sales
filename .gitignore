@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /src/views/Video/js/demo.mp4
+/node_server/node_modules
 # testing
 /coverage
 
