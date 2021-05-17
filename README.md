@@ -13,9 +13,6 @@ $ npm start
 
 
 ### How to run Node server
-```shell
-$ npm install
-```
 
 ```shell
 $ node server.js
